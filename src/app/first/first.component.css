@@ -1,0 +1,65 @@
+/* button{
+    width:100%;
+    display:block;
+    border-radius: 40px;
+} */
+h2{
+    padding-top:50px;
+    text-align: center;
+
+    font-family: 'Lucida Sans';
+
+    text-shadow: 2px 2px 8px #7c7471;
+
+    
+
+}
+h3{
+
+    text-align: center;
+
+    font-family: 'Lucida Sans';
+
+    text-shadow: 2px 2px 8px #7c7471;
+
+    
+
+}button{
+
+    width:100%;
+
+    display:block;
+
+    border-radius: 40px;
+
+}
+
+.card-body{
+
+    font-family: 'Lucida Sans';
+
+    font-size:20px;
+
+    font-weight: bolder;
+
+    /* background-color: rgb(39, 95, 128); */
+
+}
+
+/* .card-body : hover{
+
+    background-color: blue;
+
+} */
+
+.card:hover{
+
+    background-color: rgb(28, 106, 151);
+
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+
+    /* transform: scale(1.1); */
+
+    
+
+}

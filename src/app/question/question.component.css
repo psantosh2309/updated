@@ -1,0 +1,12 @@
+.bgcls{
+    background-image: url("../../assets/images/bg-themes/2.png");
+    
+ }
+
+ /* .modal-body {
+    max-height: 700px;
+} */
+.modal-dialog{
+    max-width: 700px;
+}
+

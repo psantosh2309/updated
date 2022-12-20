@@ -1,0 +1,68 @@
+<div class="main">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color bg-white">
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/images1/logo2.png" alt="logo" style="width:50%;">
+    </a>
+    <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item1">
+          <a class="nav-link text-primary" href="/userdetails"><i class="fa fa-arrow-circle-o-right"></i></a>
+          </li>
+
+      </ul>
+    </div>
+  </nav>
+
+<div class="container col-4 mt-4">
+    <h3>Link</h3>
+  <form [formGroup]="examLinkForm">
+    <!-- First Name -->
+    <div class="form-group">                                      
+      <label for="exampleInputUsername">First Name</label>
+        <div class="position-relative has-icon-right">
+          <input type="text" id="exampleInputUsername" class="form-control input-shadow" formControlName="username"  placeholder="Enter FirstName">
+            <div class="form-control-position">
+              <i class="icon-user"></i>
+         </div>
+     </div>
+    </div>
+
+     <!-- Email ID -->
+     <div class="form-group">                                      
+        <label for="exampleInputUsername">Email ID</label>
+         <div class="position-relative has-icon-right">
+            <input type="text" id="exampleInputUsername" class="form-control input-shadow" formControlName="email"  placeholder="Enter Email Address">
+            <div class="form-control-position">
+                <i class="icon-user"></i>
+            </div>
+         </div>
+    </div>
+
+     <!-- Subject -->
+        <div class="form-group">                                      
+            <label for="exampleInputUsername">Subject</label>
+             <div class="position-relative has-icon-right">
+                <input type="text" id="exampleInputUsername" class="form-control input-shadow" formControlName="subject"  placeholder="Enter Your Subject">
+                <div class="form-control-position">
+                    <i class="icon-user"></i>
+                </div>
+             </div>
+        </div>
+
+    <!-- Content -->
+        <div class="md-form">
+            <label for="form7">Content</label>
+            <textarea id="form7" class="md-textarea form-control" rows="3" formControlName="content"></textarea>
+            
+        </div>
+
+       <button type="button" class="btn btn-success btn-block mt-3" (click)="sendLink()">Send Link</button>
+ 
+   
+   </form>
+   </div>
+</div>

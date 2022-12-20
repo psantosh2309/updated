@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+	
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="row py-5 px-3">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Skill Test</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-active"  *ngFor="let data of getskillset  let i = index;">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{data.skillTest}}</td>
+                            <td>{{data.experience}}</td>
+                            <td *ngIf="data.enddate!=null else elseBlock">{{data.enddate  | date:'dd-MM-yyyy'}}</td>
+                            <ng-template #elseBlock><td>{{"No End Date Specified"}}</td></ng-template>
+                            <td>
+                                <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px;font-weight:bold" (click)="EditModal(data)" data-toggle="modal" data-target="#exampleModal"></i>
+                                
+                            </td>
+                            <td>
+                                
+                                <i class="fa fa-trash" aria-hidden="true" style="font-size:20px;font-weight:bold" (click)="DeleteModal(data)"></i>
+                            </td>
+                            <!-- <td>
+                                <i class="fa fa-plus" aria-hidden="true" style="font-size:20px;font-weight:bold" (click)="AddModal(data)"></i>
+                               <button type="button" class="btn btn-light px-5" style="background-color:lightseagreen">  <i class="fa fa-plus" aria-hidden="true"></i> Add Question</button> -->
+                            <!-- </td> -->
+                          
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+        </div>
+    </div>
+</div>
+
+<div class="row px-3 py-2">
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+Create new test
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body bgcls px-4">
+  
+        <form [formGroup]="UpdateSkillTestForm"  >
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Skill Test Name:</label>
+              <br>
+              <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Skill Test"formControlName="skillTest">
+            </div>
+             <br>
+               
+                <div  *ngFor="let data of Data; let i=index" class="form-check">
+                    <input class="form-check-input" type="radio"  [value]="data.value" formControlName="experience" >
+                    <label class="form-check-label" for="flexRadioDefault1">
+                    {{data.name}}
+                    </label>
+                   <br>
+                   <br>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">End Date:</label>
+                    <br>
+                    <input type="date" class="form-control"  placeholder="End Date" formControlName="enddate">
+                  </div>
+         
+              <br>
+          </form>
+       
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger"  data-dismiss="modal" >Close</button>
+  <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updatemodal()" [disabled]="UpdateSkillTestForm.invalid">Update</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

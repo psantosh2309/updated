@@ -1,0 +1,38 @@
+h3{
+    font-family: 'Lucida Sans';
+    }
+    ul li a {
+    font-family: 'Lucida Sans';
+    font-size: 18px;
+    }
+    .dropdown-menu{
+    background-color: #566363;
+    }
+    .dropdown-item:hover{
+    background-color: hsla(240, 90%, 12%, 0.993);
+    cursor: pointer;
+    }
+    .card-title{
+    font-family: 'Lucida Sans';
+    font-size: 18px;
+    }
+    .card{
+    transition: all 0.2s ease;
+    cursor: pointer;
+    }
+    .card:hover{
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    /* box-shadow: 1px 1px 5px 5px #e9ecef; */
+    transform: scale(1.1);
+    }
+    i{
+    font-size: 20px;
+    background-color:rgb(1, 1, 41);
+    border-radius: 50%;
+    border: 1px solid grey;
+    padding: 10px;
+    cursor: pointer;
+    }
+    .list li{
+    list-style: none;
+    }

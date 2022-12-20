@@ -1,0 +1,87 @@
+<div class="main">
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color bg-white">
+        <a class="navbar-brand" href="#">
+        <img src="../../assets/images1/logo2.png" alt="logo" style="width:50%;">
+        </a>
+        <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item1">
+            <a class="nav-link text-primary" href="/dashboard"><i class="fa fa-arrow-circle-o-right"></i></a>
+            </li>
+
+        </ul>
+        </div>
+    </nav>
+     <!-- navbar End -->
+
+    <div class="container mt-5">
+        <h3>User Details</h3>
+
+        <table class="table table-responsive-sm table-hover mt-4">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Designation</th>
+                <th>Experience</th>
+                <th>Location</th>
+                <th>EmailID</th>
+                <th>Username</th>
+                <th>Action</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of ItemsArray">
+                <td scope="row">{{ item.id }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.designation }}</td>
+                <td>{{ item.experience }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.username }}</td>
+                  <td>
+                    <!-- <button type="button" class="btn btn-success">Edit</button> -->
+                    <button type="button" class="btn btn-danger" (click)="deleteItem(item.id)">Delete</button>
+
+                  </td>
+                  <td>
+                    <!-- <button type="button" class="btn btn-success">Edit</button> -->
+                   <a href="/examlink"><button type="button" class="btn btn-success" (click)= "getEmail(item.username)" >Link</button></a>
+                    
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="foot m-3">
+        <hr>
+            <div class="container" style="height: 150px;">
+                <div class="row justify-content-center mt-4">
+                    <i class="zmdi zmdi-facebook-box mr-5"></i>
+                    <i class="zmdi zmdi-twitter mr-5"></i>
+                    <i class="zmdi zmdi-instagram mr-5"></i>
+                    <i class="zmdi zmdi-pinterest mr-5"></i>
+                    <i class="zmdi zmdi-github"></i>
+                 </div>
+                  <div class="row list justify-content-center mt-4">
+                      <p class="para mr-2">Copyright &#9400; 2022 L&T Technology Services</p>
+                      <li>Contact Us/</li>
+                      <li>Disclaimer/</li>
+                      <li>Privacy/</li>
+                      <li>Accessibility/</li>
+                      <li>Terms of use/</li>
+                      <li>Site map/</li>
+                      <li>Technology Q&A</li>
+                  </div>
+            </div>
+      </div>
+  
+
+</div>

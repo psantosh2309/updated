@@ -1,0 +1,95 @@
+<app-header></app-header>
+
+	
+  <div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="row px-3 py-2">
+            <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+   Create new test
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bgcls px-4">
+          
+                <form [formGroup]="SkillTestForm">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Skill Test Name:</label>
+                      <br>
+                      <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Skill Test"formControlName="skillTest">
+                    </div>
+                     <br>
+                       
+                        <div  *ngFor="let data of Data; let i=index" class="form-check">
+                            <input class="form-check-input" type="radio"  [value]="data.value" formControlName="experience" >
+                            <label class="form-check-label" for="flexRadioDefault1">
+                            {{data.name}}
+                            </label>
+                           <br>
+                           <br>
+                          </div>
+                          <br>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">End Date:</label>
+                            <br>
+                            <input type="date" class="form-control"  placeholder="End Date"formControlName="enddate">
+                          </div>
+                 
+                      <br>
+                  </form>
+               
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"  data-dismiss="modal" (click)="closeModal()">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="SaveSkillTest()" [disabled]="SkillTestForm.invalid">Save </button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+        <br><br>
+        <div class="container">
+            <h4 class="px-2">Skill:</h4>
+            <br>
+            <div class="row">
+                <div class="col-sm-12" >
+                   
+                    <div class="row px-1">
+                        <div class="col-sm-4" *ngFor="let skilllang of  getskilllang">
+                          <div class="card"> 
+                              <div class="card-body" data-toggle="modal" data-target="#exampleModal">
+                               <div class="row" >
+                                   <div class="col ml-4 pt-3">
+                                  <img [src]="skilllang.skillImage" class="rounded-circle" alt="No Image" width="45px" height="45px" style="border-radius:40px;"> 
+                                   </div>
+                                 <div class="col pt-4">
+                                    <h5 style="font-weight:bold">{{skilllang.skillLanguage}}</h5>
+                                   <!-- <a href="#" class="link-secondary" style="font-size:12.5px">See 3 Test</a>  -->
+                               </div>
+                               </div>
+                            
+                            </div>
+                            <br>
+                        </div>
+                       
+                         </div> 
+                    </div>
+            
+                  
+            
+                    <br>
+                </div>
+            </div>
+        </div>
+
+  </div>
+  </div>
